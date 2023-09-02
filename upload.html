@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Yükleme</title>
+</head>
+<body>
+    <h1>Resim Yükleme</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Dosya Seçin:</label>
+        <input type="file" name="file" id="file"><br><br>
+        <label for="imageURL">Veya Resim URL'si Girin:</label>
+        <input type="text" name="imageURL" id="imageURL"><br><br>
+        <input type="submit" value="Yükle">
+    </form>
+<form action="{{ url_for('upload_video', gallery_name=gallery_name) }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="videoFile">Video Seçin</label>
+<input type="file" name="file" id="videoFile" accept=".mp4, .avi, .mkv">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Video Yükle</button>
+</form>
+
+    <a href="{{ url_for('gallery', gallery_name=gallery_name) }}">Galeriye Geri Dön</a>
+</body>
+</html>
